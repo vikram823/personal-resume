@@ -84,11 +84,11 @@ nav div.navigation ul li a{
     text-decoration: none;
     color: var(--pure);
     margin-right: 2rem;
-    transition: all 1s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 nav div.navigation ul li a:hover{
-    border-bottom: 2px solid var(--pure);
+    color: var(--info);
        
 }
 
@@ -361,8 +361,28 @@ section.counter_wrapper{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     background: var(--dark-gray);
+
 }
 
+section.counter_wrapper i{
+    font-size: 30px;
+    margin-right: 1.5rem;
+    align-items: center;
+}
+
+section.counter_wrapper > div:nth-child(1) i{
+    color: var(--yellow);
+}
+
+section.counter_wrapper > div:nth-child(2) i{
+    color: rgb(64, 247, 201);
+    font-size: 35px;
+}
+
+section.counter_wrapper > div:nth-child(3) i{
+    color: rgb(185, 21, 235);
+    font-size: 35px;
+}
 section.counter_wrapper > div{
     display: flex;
     align-items: center;
@@ -433,8 +453,20 @@ section.contact .wrapper .left h4{
     margin-bottom: 5px;
 }
 
-section.contact .wrapper .left{
-    color: var(--ternary)
+section.contact .wrapper .left>div h4, section.contact .wrapper .left>div span{
+    color: var(--ternary);
+}
+
+section.contact .wrapper .left>div:nth-child(1) i{
+    color: var(--yellow)
+}
+
+section.contact .wrapper .left>div:nth-child(2) i{
+    color: rgb(64, 247, 201);
+}
+
+section.contact .wrapper .left>div:nth-child(3) i{
+    color: rgb(185, 21, 235);
 }
 
 section.contact .wrapper .left i{

@@ -4,7 +4,6 @@ const hbs = require("hbs")
 const User = require("../models/user")
 require("../db/connection")
 const sendMailTo = require("../mail/mail")
-const getCounterValue = require("../counter/counter")
 const app = express()
 
 const port = process.env.PORT || 3000
@@ -19,26 +18,6 @@ app.use(express.static(publicDirPath))
 app.set("view engine", "hbs")
 app.set("views", viewsDirPath)
 hbs.registerPartials(partialsDirPath)
-
-
-// -------------------------
-
-const mongodb = require('mongodb')
-const MongoClient = mongodb.MongoClient
-const connectionURL = 'mongodb://127.0.0.1:27017'
-const databaseName = 'userQuery'
-MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client)=> {
- if (error) {
- return console.log('Unable to connect to database!')
- }
- const db = client.db(databaseName)
-
- db.collection('visits').insertOne({
-    count: getCounterValue()
-   })
-})
-
-// -------------------------
 
 app.get("/", (req, res)=>{
     res.render("index")

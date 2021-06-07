@@ -8,7 +8,7 @@ const sendMailTo = (emailId)=>{
         requireTLS: true,
         auth: {
             user: "vikramdeshmukh899@gmail.com",
-            pass: ""
+            pass: "SOME PASSWORD"
         }
     })
     

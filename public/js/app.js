@@ -8,7 +8,6 @@ bars.forEach((bar)=>{
 
 })
 
-
 let counters = document.querySelectorAll(".counter")
 
 let runCounter = ()=>{
@@ -56,4 +55,21 @@ $(document).ready(()=>{
 
     })
 })
-      
+
+
+let count = document.getElementById("visits")
+
+function updateCounter(){
+    fetch(
+        "https://api.countapi.xyz/update/vikram/vkd/?amount=1"
+    )
+        .then((response) => response.json())
+        .then((data) => {
+            count.innerHTML = data.value;
+        })
+        .catch((err) => console.log(err));
+    }
+    
+updateCounter()
+
+    
